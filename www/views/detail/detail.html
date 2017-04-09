@@ -1,0 +1,24 @@
+<head>
+  <style type="text/css">
+
+.myColor{
+  background-color:steelblue;
+  color:black;
+}
+  </style>
+</head>
+<ion-view view-title="Detail for {{currency.code}}">
+  <ion-content>
+    <ion-list >
+      <ion-item class="myColor" >Last <span class="badge badge-stable icon ion-social-bitcoin">{{currency.ticker.last}}</span></ion-item>
+      <ion-item class="myColor">Ask <span class="badge badge-stable icon ion-social-bitcoin">{{currency.ticker.ask}}</span></ion-item>
+      <ion-item class="myColor">Bid <span class="badge badge-stable icon ion-social-bitcoin">{{currency.ticker.bid}}</span></ion-item>
+      <ion-item class="myColor">24h Average <span class="badge badge-stable icon ion-social-bitcoin">{{currency.ticker['24h_avg']}}</span></ion-item>
+      <ion-item class="myColor">24h Volume <span class="badge badge-stable icon ion-social-bitcoin"> {{currency.ticker.total_vol | number:2}}</span></ion-item>
+      <ion-item ui-sref="tabs.history({currency: currency.code})" class="item-icon-right ">View History <span class="icon ion-arrow-right-b"></span></ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-footer-bar class="bar-dark">
+    <h1 class="title">Updated {{currency.ticker.timestamp | date:'mediumTime'}}</h1>
+  </ion-footer-bar>
+</ion-view>
