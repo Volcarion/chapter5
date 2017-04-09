@@ -27,7 +27,7 @@ angular.module('App')
       $scope.$broadcast('scroll.refreshComplete');
     });
   };
-
+// indexedDB from Dr. Babb's chapter 5
 //methods for the indexedDB service
   $scope.refreshList = function(){
     indexDBService.getRates().then(function(data){
